@@ -1,0 +1,524 @@
+<template>
+    <div class="skills">
+        <div class="logos">
+            <div class="logo html" @mouseenter="wiggle('html'), active = 'html'"> 
+                <img src="../assets/logos/html.png" alt="html-logo">
+            </div>
+            <div class="logo css" @mouseenter="wiggle('css'), active = 'css'">
+                <img src="../assets/logos/css.png" alt="css-logo">
+            </div>
+            <div class="logo js" @mouseenter="wiggle('js'), active = 'js'">
+                <img src="../assets/logos/js.png" alt="js-logo">
+            </div>
+            <div class="logo vue" @mouseenter="wiggle('vue'), active = 'vue'">
+                <img src="../assets/logos/vue.png" alt="vue-logo">
+            </div>
+            <div class="logo sass" @mouseenter="wiggle('sass'), active = 'sass'">
+                <img src="../assets/logos/sass.png" alt="sass-logo">
+            </div>
+            <div class="logo jquery" @mouseenter="wiggle('jquery'), active = 'jquery'">
+                <img src="../assets/logos/jquery.png" alt="jquery-logo">
+            </div>
+            <div class="logo webpack" @mouseenter="wiggle('webpack'), active = 'webpack'">
+                <img src="../assets/logos/webpack.png" alt="webpack-logo">
+            </div>
+            <div class="logo git" @mouseenter="wiggle('git'), active = 'git'">
+                <img src="../assets/logos/git.png" alt="git-logo">
+            </div>
+            <div class="logo npm" @mouseenter="wiggle('npm'), active = 'npm'">
+                <img src="../assets/logos/npm.png" alt="git-logo">
+            </div>
+        </div>
+        <transition name="skill-show">
+            <div class="skill-description" v-if="active === ''">
+                <skill-description>
+                    <template v-slot:heading>
+                        <h2>Overall</h2>
+                    </template>
+                    <template v-slot:paragraph>
+                        <p>I have always prided myself in my <span class="highlight-1">analytical thinking</span> and approach. During my time studying Actuarial Maths I have enjoyed modules such as Analytical Modelling, Statistical Analysis and Economics. I strive in <span class="highlight-2">problem-solving</span>, be it real-world decisions, mathematical questions, chess puzzles, I love the feeling of a problem solved and we all know the feeling of code running after hours of failures. The key for me is always keep an <span class="highlight-1">open mind - think creatively</span>, take <span class="highlight-2">initiative</span> and stay <span class="highlight-3">resilient</span>. As a person I am <span class="highlight-2">open and friendly</span> which makes it very easy for me to engage in <span class="highlight-1">teamwork</span>. <br><br> <span class="highlight-4">When it comes to my coding skills hover over a logo to see what I know!</span> </p>
+                        <i class="star4 star5 star2 star1 star3"></i>
+                    </template>
+                </skill-description>
+            </div>
+        </transition>
+
+        <transition name="skill-show">
+            <div v-if="active === 'html'">
+                <skill-description>
+                    <template v-slot:heading>
+                        HTML5
+                    </template>
+                    <template v-slot:rating>
+                        <div class="rating">
+                            <i class="fas fa-star star1"></i>
+                            <i class="fas fa-star star2"></i>
+                            <i class="fas fa-star star3"></i>
+                            <i class="fas fa-star star4"></i>
+                            <i class="fas fa-star star5"></i>
+                        </div>
+                    </template>
+                    <template v-slot:paragraph>
+                    I am not afraid to give myself a 5 star rating for my knowledge of HTML5. It has been by my side from the very beginning and writing it for each one of my projects made me confident in my ability to use it. Perfection by repetition.
+                    </template>
+                    <template v-slot:list>
+                        <ul>
+                            <li><p>Semantics</p> <i class="fas fa-check"></i></li>
+                            <li><p>Text</p> <i class="fas fa-check"></i></li>
+                            <li><p>Lists</p> <i class="fas fa-check"></i></li>
+                            <li><p>Links</p> <i class="fas fa-check"></i></li>
+                            <li><p>Images</p> <i class="fas fa-check"></i></li>
+                            <li><p>Tables</p> <i class="fas fa-check"></i></li>
+                            <li><p>Forms</p> <i class="fas fa-check"></i></li>
+                        </ul>
+                    </template>
+                </skill-description>
+            </div>
+        </transition>
+
+        <transition name="skill-show">
+        <div v-if="active === 'css'">
+            <skill-description>
+                <template v-slot:heading>
+                    CSS3
+                </template>
+                <template v-slot:rating>
+                    <div class="rating">
+                        <i class="fas fa-star star1"></i>
+                        <i class="fas fa-star star2"></i>
+                        <i class="fas fa-star star3"></i>
+                        <i class="fas fa-star star4"></i>
+                        <i class="fas fa-star star5"></i>
+                    </div>
+                </template>
+                <template v-slot:paragraph>
+                    CSS3 has granted me the abilities to create fully responsive layouts, control images, style almost all HTML elements and even animate the elements with just a few lines of code. The CSS Flexbox module and CSS Grid Layout system give you incredible freedom as to what your page can look like.
+                </template>
+                <template v-slot:list>
+                    <ul>
+                        <li><p>Color</p> <i class="fas fa-check"></i></li>
+                        <li><p>Positioning</p> <i class="fas fa-check"></i></li>
+                        <li><p>Lists, Tables and Forms</p> <i class="fas fa-check"></i></li>
+                        <li><p>Images</p> <i class="fas fa-check"></i></li>
+                        <li><p>CSS Flexbox</p> <i class="fas fa-check"></i></li>
+                        <li><p>CSS Grid</p> <i class="fas fa-check"></i></li>
+                        <li><p>Media Queries</p> <i class="fas fa-check"></i></li>
+                    </ul>
+                </template>
+            </skill-description>
+        </div>
+        </transition>
+
+        <transition name="skill-show">
+            <div v-if="active === 'js'">
+                <skill-description>
+                    <template v-slot:heading>
+                        Vanilla JavaScript
+                    </template>
+                    <template v-slot:rating>
+                        <div class="rating">
+                            <i class="fas fa-star star1"></i>
+                            <i class="fas fa-star star2"></i>
+                            <i class="fas fa-star star3"></i>
+                            <i class="fas fa-star star4"></i>
+                            <i class="far fa-star"></i>
+                            <i class="star5"></i>
+                        </div>
+                    </template>
+                    <template v-slot:paragraph>
+                        With the help of Jon Duckett's incredible JavaScript and jQuery, YouTube tutorials, Brad Traversy's udemy course Modern JavaScript From the Beginning and A LOT of practice, I build strong practical knowledge of JavaScript's core concepts.
+                    </template>
+                    <template v-slot:list>
+                        <ul>
+                            <li><p>Fundamentals</p> <i class="fas fa-check"></i></li>
+                            <li><p>DOM Manipulation and Events</p> <i class="fas fa-check"></i></li>
+                            <li><p>OOP in JavaScript</p> <i class="fas fa-check"></i></li>
+                            <li><p>Asynchronous Programming</p> <i class="fas fa-check"></i></li>
+                            <li><p>ES6+</p> <i class="fas fa-check"></i></li>
+                            <li><p>Patterns</p> <i class="fas fa-check"></i></li>
+                        </ul>
+                    </template>
+                </skill-description>
+            </div>
+        </transition>
+
+        <transition name="skill-show">
+            <div v-if="active === 'vue'">
+                <skill-description>
+                    <template v-slot:heading>
+                        Vue.js
+                    </template>
+                    <template v-slot:rating>
+                        <div class="rating">
+                            <i class="fas fa-star star1"></i>
+                            <i class="fas fa-star star2"></i>
+                            <i class="fas fa-star star3"></i>
+                            <i class="fas fa-star star4"></i>
+                            <i class="far fa-star"></i>
+                            <i class="star5"></i>
+                        </div>
+                    </template>
+                    <template v-slot:paragraph>
+                        I started learning Vue.js when I was comfortable writing pure Vanilla JavaScript based websites and applications, but needed something that would help me structure larger projects. I completed Maximilian Schwarzmüller's Vue - The Complete Guide course, along the way practicing and building my own projects. I learned how to split my projects into smaller components that work together, route between them, utilize Vue's reactivity and much more. At this point I feel confident enough to sit down and write the front-end of a website / application on my own. 
+                    </template>
+                    <template v-slot:list>
+                        <ul>
+                            <li><p>Core Concepts in Vue</p> <i class="fas fa-check"></i></li>
+                            <li><p>Vue CLI</p> <i class="fas fa-check"></i></li>
+                            <li><p>Conditional Content</p> <i class="fas fa-check"></i></li>
+                            <li><p>Components</p> <i class="fas fa-check"></i></li>
+                            <li><p>Forms and validation</p> <i class="fas fa-check"></i></li>
+                            <li><p>Http Requests</p> <i class="fas fa-check"></i></li>
+                            <li><p>Vue Router and Vuex</p> <i class="fas fa-check"></i></li>
+                            <li><p>Animations and Transitions</p> <i class="fas fa-check"></i></li>
+                        </ul>
+                    </template>
+                </skill-description>
+            </div>
+        </transition>
+
+        <transition name="skill-show">
+            <div v-if="active === 'sass'">
+                <skill-description>
+                    <template v-slot:heading>
+                        SASS
+                    </template>
+                    <template v-slot:rating>
+                        <div class="rating">
+                            <i class="fas fa-star star1"></i>
+                            <i class="fas fa-star star2"></i>
+                            <i class="fas fa-star star3"></i>
+                            <i class="fas fa-star star4"></i>
+                            <i class="far fa-star"></i>
+                            <i class="star5"></i>
+                        </div>
+                    </template>
+                    <template v-slot:paragraph>
+                        When I learned Sass writing CSS became even easier. Things I thought never possible with CSS have just become possible, reference symbols, nesting, creating reusable styling functions with mixins, all making the code cleaner.
+                    </template>
+                    <template v-slot:list>
+                        <ul>
+                            <li><p>Variables</p> <i class="fas fa-check"></i></li>
+                            <li><p>Reference symbols</p> <i class="fas fa-check"></i></li>
+                            <li><p>Nesting</p> <i class="fas fa-check"></i></li>
+                            <li><p>Mixins</p> <i class="fas fa-check"></i></li>
+                            <li><p>Extend/Inheritence</p> <i class="fas fa-check"></i></li>
+                        </ul>
+                    </template>
+                </skill-description>
+            </div>
+        </transition>
+
+        <transition name="skill-show">
+            <div v-if="active === 'jquery'">
+                <skill-description>
+                    <template v-slot:heading>
+                        jQuery
+                    </template>
+                    <template v-slot:rating>
+                        <div class="rating">
+                            <i class="fas fa-star star1"></i>
+                            <i class="fas fa-star star2"></i>
+                            <i class="fas fa-star-half-alt star3"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="star4 star5"></i>
+                        </div>
+                    </template>
+                    <template v-slot:paragraph>
+                        I have read about jQuery and practiced some of it when studying from Jon Duckett's JavaScript book that includes it. As I dove deeper into JavaScript though, I never felt the need for it, because anything that jQuery was used for could now be achieved with modern JavaScript and so my knowledge of it is limited to theory.
+                    </template>
+                    <template v-slot:list>
+                        <ul>
+                            <li><p>DOM Manipulation</p> <i class="fas fa-check"></i></li>
+                            <li><p>Editing CSS Rules</p> <i class="fas fa-check"></i></li>
+                        </ul>
+                    </template>
+                </skill-description>
+            </div>
+        </transition>
+
+        <transition name="skill-show">
+            <div v-if="active === 'webpack'">
+                <skill-description>
+                    <template v-slot:heading>
+                        Webpack
+                    </template>
+                    <template v-slot:rating>
+                        <div class="rating">
+                            <i class="fas fa-star star1"></i>
+                            <i class="fas fa-star star2"></i>
+                            <i class="fas fa-star star3"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="star4 star5"></i>
+                        </div>
+                    </template>
+                    <template v-slot:paragraph>
+                        My need for webpack arose when I built a bigger website without the use of a JavaScript framework. Having more than just one .js and .css file and dependencies all around, I wondered if there was a way to bring it all together. Webpack was the answer, I learned to utilize the module bundler through practice and acquired a good working knowledge of it.
+                    </template>
+                    <template v-slot:list>
+                        <ul>
+                            <li><p>Configuration</p> <i class="fas fa-check"></i></li>
+                            <li><p>Loaders</p> <i class="fas fa-check"></i></li>
+                            <li><p>Loaders</p> <i class="fas fa-check"></i></li>
+                            <li><p>Plugins</p> <i class="fas fa-check"></i></li>
+                        </ul>
+                    </template>
+                </skill-description>
+            </div>
+        </transition>
+
+        <transition name="skill-show">
+            <div v-if="active === 'git'">
+                <skill-description>
+                    <template v-slot:heading>
+                        GIT
+                    </template>
+                    <template v-slot:rating>
+                        <div class="rating">
+                            <i class="fas fa-star star1"></i>
+                            <i class="fas fa-star star2"></i>
+                            <i class="fas fa-star star3"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="star4 star5"></i>
+                        </div>
+                    </template>
+                    <template v-slot:paragraph>
+                        I know GIT is one of the most important tools when working in a group, where sharing and keeping the project up-to-date for everyone is key. I started using this version control system as soon as I began programming to become comfortable with it. I now have basic working knowledge of it and using it through GIT Bash.
+                    </template>
+                    <template v-slot:list>
+                        <ul>
+                            <li><p>Basic Snapshotting</p> <i class="fas fa-check"></i></li>
+                            <li><p>Branching and merging</p> <i class="fas fa-check"></i></li>
+                            <li><p>Sharing and updating</p> <i class="fas fa-check"></i></li>
+                        </ul>
+                    </template>
+                </skill-description>
+            </div>
+        </transition>
+        <transition name="skill-show">
+            <div v-if="active === 'npm'">
+                <skill-description>
+                    <template v-slot:heading>
+                        NPM
+                    </template>
+                    <template v-slot:rating>
+                        <div class="rating">
+                            <i class="fas fa-star star1"></i>
+                            <i class="fas fa-star star2"></i>
+                            <i class="fas fa-star star3"></i>
+                            <i class="fas fa-star star4"></i>
+                            <i class="far fa-star"></i>
+                            <i class="star5"></i>
+                        </div>
+                    </template>
+                    <template v-slot:paragraph>
+                        I've used the Node.js package manager for a while now to adapt packages of code for my applications and to download tools for use right away. Sometimes it can provide many different ways to solve one problem.
+                    </template>
+                    <template v-slot:list>
+                        <ul>
+                            <li><p>Packages</p> <i class="fas fa-check"></i></li>
+                            <li><p>Tools</p> <i class="fas fa-check"></i></li>
+                        </ul>
+                    </template>
+                </skill-description>
+            </div>
+        </transition>
+        <div class="arrow" @click="goBack('main-page')">
+            <i class="fas fa-chevron-left"></i>
+            <p>Go back</p>
+        </div>
+        <div class="overall">
+            <button @click="active = ''">Overall</button>
+        </div>
+    </div>
+</template>
+
+
+
+.<script>
+import {TimelineMax, Elastic} from '../../node_modules/gsap'
+import SkillDescription from './SkillDescription.vue'
+export default {
+    components: {SkillDescription},
+    data() {
+        return{
+            active: ''
+        }
+    },
+    methods: {
+        wiggle(element){
+            const tl = new TimelineMax({repeat:0,repeatDelay:2})
+                tl.to(`.${element}` ,0.5,{rotation:50})
+                .to(`.${element}` ,3,{rotation:0,ease:Elastic.easeOut.config(0.9,0.1)});
+        }
+    },
+    inject: ['goBack']
+}
+</script>
+
+<style lang="scss" scoped>
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
+    .skills{
+        width: 100%;
+        background-color: #fdf5e6;
+        padding-bottom: 5rem;
+
+        .logos{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            min-height: 30vh;
+            width: 100%;
+            flex-wrap: wrap;
+            .logo{
+                img{
+                    width: 10rem;
+
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+        .highlight-1{
+            font-size: 2.8rem;
+            text-decoration: underline;
+            text-transform: uppercase;
+        }
+
+        .highlight-2{
+            font-size: 2.5rem;
+            text-decoration: underline;
+            text-transform: uppercase;
+        }
+
+        .highlight-3{
+            font-size: 2.2rem;
+            text-decoration: underline;
+            text-transform: uppercase;
+        }
+
+        .highlight-4{
+            text-transform: uppercase;
+        }
+
+        .rating{
+            width: 100%;
+            text-align: center;
+            margin: 3rem 0;
+            i{
+                font-size: 4rem;
+                color: #fed766;
+                margin: 0 0.5rem;
+                transform: scale(0);
+            }
+        }
+
+        ul{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 4rem 0;
+            min-height: 20vh;
+
+            li{
+                width: 40%;
+                display: flex;
+                justify-content: space-evenly;
+
+                p{
+                    width: 50%;
+                    text-align: right;
+                    text-transform: uppercase;
+                    font-size: 1.7rem;
+                    line-height: 3rem;
+                }
+
+                i{
+                    width: 30%;
+                    text-align: left;
+                    margin-left: 2rem;
+                    font-size: 2rem;
+                }
+            }
+        }
+
+        .arrow{
+            position: fixed;
+            left: 2rem;
+            bottom: 2rem;
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
+            text-transform: uppercase;
+            transition: all 0.4s;
+
+            &:hover{
+                cursor:pointer;
+                transform: scale(1.1);
+            }
+            
+            i{
+                font-size: 2.2rem;
+            }
+            p{
+                margin-left: 2rem;
+            }
+        }
+
+        .overall{
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+
+            button{
+                padding: 1rem 3rem;
+                background-color: transparent;
+                border: 0.2rem solid #000;
+                text-transform: uppercase;
+                letter-spacing: 0.1rem;
+                transition: all 0.4s;
+
+                &:hover{
+                    background-color: #000;
+                    color: #fff;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .skill-show-enter-from{
+        opacity: 0;
+    }
+
+    .skill-show-enter-active{
+        transition: opacity 2s;
+    }
+
+    .skill-show-enter-to{
+        opacity: 1;
+    }
+
+    /* Media queries */
+
+    @media(max-width: 1200px){
+        .skills{
+            .logos{
+                .logo{
+                    padding: 1rem;
+                }
+            }
+        }
+    }
+
+</style>
