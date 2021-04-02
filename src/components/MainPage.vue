@@ -1,80 +1,63 @@
 <template>
-    <main class="main-page" v-if="active === 'main-page'">
+    <main class="main-page" v-if="$route.path === '/main'">
         <div class="picture-of-me">
         </div>
         <div class="personal-information">
             <div class="name">Sebastian Haczela</div>
             <div class="navigation-2">
                 <nav>
-                    <div class="projects">
-                        <a @click="active ='projects'" class="btn-flip" data-back="Take a look" data-front="Projects"></a>
-                    </div>
-                    <div class="skills-btn">
-                        <a @click="active = 'skills'" class="btn-flip" data-back="trust me" data-front="skills"></a>
-                    </div>
-                    <div class="contact-me">
-                        <a @click="active = 'contact'" class="btn-flip" data-back="Don't think twice" data-front="Contact me"></a>
-                    </div>
-                    <div class="resume">
-                        <a href="../assets/sebastianhaczelaresume.pdf" target="_blank" class="btn-flip" data-back="view" data-front="resume"></a>
-                    </div>
+                <div class="projects">
+                    <router-link to="/projects" class="btn-flip" data-back="Take a look" data-front="Projects"></router-link>
+                </div>
+                <div class="skills-btn">
+                    <router-link to="/skills" class="btn-flip" data-back="trust me" data-front="skills"></router-link>
+                </div>
+                <div class="contact-me">
+                    <router-link to="/contact" class="btn-flip" data-back="Don't think twice" data-front="Contact me"></router-link>
+                </div>
+                <div class="resume">
+                    <a href="../assets/sebastianhaczelaresume.pdf" target="_blank" class="btn-flip" data-back="view" data-front="resume"></a>
+                </div>
                 </nav>
             </div>
             <div class="about-me">
                 <h2>A <span>little</span> bit about coding and I</h2>
-                <p>I am a young aspiring developer. I was always a more "programmatically" thinking person, who often heard "it's because you spend so much time in front of that computer". So when I first set off on my coding journey, even though first days, weeks and months were strenous, to put it mildly, I knew I was never going to look back. This was expected, because, how do you talk to someone if you don't speak their language? HTML and CSS were my first friends. They're easier to get along with, I would say, because they show much more than they speak. With them I learned how to structure and style pages in any way I like, without the help of any external libraries or boilerplates, now this is freedom. There came a limit however, when I wanted slides to move, display something dynamically or else, they just kind of looked at me. I knew it was time to meet Vanilla JavaScript. JS is much more sophisticated and logical, but this is why I fell in love with it, if you'll command it right, there is nothing in web development it won't do for you, I learned that very quickly when I saw my websites coming to life with interactiveness. This is when projects presented in this portfolio also started coming into existance. After months of failures and successes, googling, asking and researching, JavaScript and I came to a very good understanding and he decided to introduce me to family, Vue.js, who has helped me build my first demo single-page websites and is helping me build this portfolio. At the end, I cannot fail to mention, VS Code who helps me communicate, Webpack who always keeps everyone together, GIT who always kept us safe and commited.
+                <p>I am a young aspiring developer. I was always a more "programmatically" thinking person, who often heard "it's because you spend so much time in front of that computer". So when I first set off on my coding journey, even though first days, weeks and months were strenous, to put it mildly, I knew I was never going to look back. This was expected, because, how do you talk to someone if you don't speak their language? HTML and CSS were my first friends. They're easier to get along with, I would say, because they show much more than they speak. With them I learned how to structure and style pages in any way I like, without the help of any external libraries or boilerplates, now this is freedom. There came a limit however, when I wanted slides to move, display something dynamically or else, they just kind of looked at me. I knew it was time to meet Vanilla JavaScript. JS is much more sophisticated and logical, but this is why I fell in love with it, if you'll command it right, there is nothing in web development it won't do for you, I learned that very quickly when I saw my websites coming to life with interactiveness. This is when projects presented in this portfolio also started coming into existance. After months of failures and successes, googling, asking and researching, JavaScript and I came to a very good understanding and he decided to introduce me to family, Vue.js, who has helped me build my first demo single-page websites and is helping me build this portfolio. From then on, came a landslide, with Node.js, Express.js, MySQL, MongoDB...  At the end, I cannot fail to mention, VS Code who helps me communicate, Webpack who always keeps everyone together, GIT who always kept us safe and commited.
                 </p>
             </div>
         </div>
         <div class="navigation">
             <nav>
                 <div class="projects">
-                    <a @click="active ='projects'" class="btn-flip" data-back="Take a look" data-front="Projects"></a>
+                    <router-link to="/projects" class="btn-flip" data-back="Take a look" data-front="Projects"></router-link>
                 </div>
                 <div class="skills-btn">
-                    <a @click="active = 'skills'" class="btn-flip" data-back="trust me" data-front="skills"></a>
+                    <router-link to="/skills" class="btn-flip" data-back="trust me" data-front="skills"></router-link>
                 </div>
                 <div class="contact-me">
-                    <a @click="active = 'contact'" class="btn-flip" data-back="Don't think twice" data-front="Contact me"></a>
+                    <router-link to="/contact" class="btn-flip" data-back="Don't think twice" data-front="Contact me"></router-link>
                 </div>
                 <div class="resume">
-                    <a href="./assets/static/sebastianhaczelaresume.pdf" type="application/octet-stream" target="_blank" class="btn-flip" data-back="view" data-front="resume"></a>
+                    <a href="https://drive.google.com/file/d/1bXC-22edJmqfLaC4kyT0VXHZTGjJCY7u/view?usp=sharing" class="btn-flip" data-back="view" data-front="resume"></a>
                 </div>
             </nav>
         </div>
         <p class="copy">designed and created by Sebastian Haczela &copy; 2021 </p>
     </main>
-    <section class="skills" v-if="active === 'skills'">
-        <skills-page></skills-page>
-    </section>
-    <section class="projects" v-if="active === 'projects'">
-        <projects-page></projects-page>
-    </section>
-    <section class="contact" v-if="active === 'contact'">
-        <contact-page></contact-page>
-    </section>
+    <router-view name="skills"></router-view>
+    <router-view name="projects"></router-view>
+    <router-view name="contact"></router-view>
 </template>
 
 <script>
-import SkillsPage from './SkillsPage.vue'
-import ProjectsPage from './ProjectsPage.vue'
-import ContactPage from './ContactPage.vue'
 export default {
-    components: {SkillsPage, ProjectsPage, ContactPage},
     data() {
         return{
-            active: "main-page"
+            mobile: false
         }
     },
-    methods: {
-        goBack(to) {
-            this.active = to
-        } 
-    },
-    provide() {
-        return{
-            goBack: this.goBack
-        }
+    mounted(){
+        window.scrollTo(0, 0)
     }
 }
 </script>
@@ -84,7 +67,7 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
 
     .main-page{
-        height: 100vh;
+        height: auto;
         width: 100vw;
         background-color: #fdf5e6;
         position: relative;
@@ -102,7 +85,7 @@ export default {
             position: absolute;
             right: 0;
             width: 30vw;
-            height: 100vh;
+            height: 100%;
 
             background: url('../assets/me.jpg') center no-repeat;
             background-size: cover;
@@ -165,6 +148,7 @@ export default {
                 display: flex;
                 align-items: center;
                 justify-content: space-around;
+                padding-left: 1rem;
                 .btn-flip{
                     opacity: 1;
                     outline: 0;
@@ -235,37 +219,60 @@ export default {
 
     /* Media queries */
 
-
-    @media(max-height: 650px ){
+    @media(max-height: 750px){
         .main-page{
-            height: auto;
             .personal-information{
-                height: auto;
+                height: 100vh;
             }
         }
+    }
+
+    @media(max-height: 550px){
+        .main-page{
+            .personal-information{
+                height: 120vh;
+            }
+        }
+    }
+
+    @media(min-width: 1300px){
+        .main-page{
+            .personal-information{
+                height: 80vh;
+            }
+            .navigation{
+                height: 20vh;
+            }
+        }
+
     }
 
     @media(max-width: 1300px){
         .main-page{
             height: auto;
-            .personal-information{
-                height: auto;
-            }
 
             .navigation{
+                height: 20vh;
                 nav{
-                    width: 60%;
+                    width: 70%;
                 }
+            }
+        }
+    }
+
+    @media(max-width: 1150px){
+        .main-page{
+
+            .personal-information{
+                height: 100vh;
             }
         }
     }
 
     @media(max-width: 1050px){
         .main-page{
-            .navigation{
-                nav{
-                    width: 70%;
-                }
+            .personal-information{
+                height: auto;
             }
         }
     }

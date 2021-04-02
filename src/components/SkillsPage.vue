@@ -13,6 +13,15 @@
             <div class="logo vue" @mouseenter="wiggle('vue'), active = 'vue'">
                 <img src="../assets/logos/vue.png" alt="vue-logo">
             </div>
+            <div class="logo node" @mouseenter="wiggle('node'), active = 'node'">
+                <img src="../assets/logos/node.png" alt="node-logo">
+            </div>
+            <div class="logo mysql" @mouseenter="wiggle('mysql'), active = 'mysql'">
+                <img src="../assets/logos/mysql.png" alt="mysql-logo">
+            </div>
+            <div class="logo mongodb" @mouseenter="wiggle('mongodb'), active = 'mongodb'">
+                <img src="../assets/logos/mongodb.png" alt="mongodb-logo">
+            </div>
             <div class="logo sass" @mouseenter="wiggle('sass'), active = 'sass'">
                 <img src="../assets/logos/sass.png" alt="sass-logo">
             </div>
@@ -29,6 +38,13 @@
                 <img src="../assets/logos/npm.png" alt="git-logo">
             </div>
         </div>
+        <transition name="skill-show">
+            <div class="overall-container" v-if="active !== ''">
+                <div class="logo overall">
+                    <button @click="active = ''">Overall</button>
+                </div>
+            </div>
+        </transition>
         <transition name="skill-show">
             <div class="skill-description" v-if="active === ''">
                 <skill-description>
@@ -171,6 +187,102 @@
                             <li><p>Http Requests</p> <i class="fas fa-check"></i></li>
                             <li><p>Vue Router and Vuex</p> <i class="fas fa-check"></i></li>
                             <li><p>Animations and Transitions</p> <i class="fas fa-check"></i></li>
+                        </ul>
+                    </template>
+                </skill-description>
+            </div>
+        </transition>
+
+        <transition name="skill-show">
+            <div v-if="active === 'node'">
+                <skill-description>
+                    <template v-slot:heading>
+                        Node.js
+                    </template>
+                    <template v-slot:rating>
+                        <div class="rating">
+                            <i class="fas fa-star star1"></i>
+                            <i class="fas fa-star star2"></i>
+                            <i class="fas fa-star star3"></i>
+                            <i class="star4"></i>
+                            <i class="star5"></i>
+                        </div>
+                    </template>
+                    <template v-slot:paragraph>
+                        Learning Node.js has given me the ability to launch both the front-end and the back-end using JavaScript. I've become comfortable with the logic between front-end, back-end and database communication using Node.js and in it the Express.js framework.
+                    </template>
+                    <template v-slot:list>
+                        <ul>
+                            <li><p>Express.js</p> <i class="fas fa-check"></i></li>
+                            <li><p>Rest APIs</p> <i class="fas fa-check"></i></li>
+                            <li><p>CRUD</p> <i class="fas fa-check"></i></li>
+                            <li><p>Sequelize</p> <i class="fas fa-check"></i></li>
+                            <li><p>Mongoose</p> <i class="fas fa-check"></i></li>
+                            <li><p>Tokens</p> <i class="fas fa-check"></i></li>
+                            <li><p>MVC</p> <i class="fas fa-check"></i></li>
+                            <li><p>GraphQl</p> <i class="fas fa-check"></i></li>
+                        </ul>
+                    </template>
+                </skill-description>
+            </div>
+        </transition>
+
+        <transition name="skill-show">
+            <div v-if="active === 'mysql'">
+                <skill-description>
+                    <template v-slot:heading>
+                        MySQL
+                    </template>
+                    <template v-slot:rating>
+                        <div class="rating">
+                            <i class="fas fa-star star1"></i>
+                            <i class="fas fa-star star2"></i>
+                            <i class="star3"></i>
+                            <i class="star4"></i>
+                            <i class="star5"></i>
+                        </div>
+                    </template>
+                    <template v-slot:paragraph>
+                        I've learned MySQL not only with Node's sequelize but also taken The Ultimate MySQL Bootcamp course on udemy where I learned pure MySQL.
+                    </template>
+                    <template v-slot:list>
+                        <ul>
+                            <li><p>MySQL workbench</p> <i class="fas fa-check"></i></li>
+                            <li><p>CRUD queries</p> <i class="fas fa-check"></i></li>
+                            <li><p>Data Realtionships</p> <i class="fas fa-check"></i></li>
+                            <li><p>Logical Operators</p> <i class="fas fa-check"></i></li>
+                            <li><p>Sequelize</p> <i class="fas fa-check"></i></li>
+                        </ul>
+                    </template>
+                </skill-description>
+            </div>
+        </transition>
+
+        <transition name="skill-show">
+            <div v-if="active === 'mongodb'">
+                <skill-description>
+                    <template v-slot:heading>
+                        mongoDB
+                    </template>
+                    <template v-slot:rating>
+                        <div class="rating">
+                            <i class="fas fa-star star1"></i>
+                            <i class="fas fa-star star2"></i>
+                            <i class="star3"></i>
+                            <i class="star4"></i>
+                            <i class="star5"></i>
+                        </div>
+                    </template>
+                    <template v-slot:paragraph>
+                        During my learning of Node.js I've came across MongoDB, it is a different type of database to MySQL in that there is no set schemas and there is no set out relationships between collections, this makes scaling these databases easier. 
+                    </template>
+                    <template v-slot:list>
+                        <ul>
+                            <li><p>MongoDB Compass</p> <i class="fas fa-check"></i></li>
+                            <li><p>CRUD queries</p> <i class="fas fa-check"></i></li>
+                            <li><p>Embedded Documents</p> <i class="fas fa-check"></i></li>
+                            <li><p>Logical Operators</p> <i class="fas fa-check"></i></li>
+                            <li><p>Mogoose</p> <i class="fas fa-check"></i></li>
                         </ul>
                     </template>
                 </skill-description>
@@ -330,17 +442,15 @@
             <i class="fas fa-chevron-left"></i>
             <p>Go back</p>
         </div>
-        <div class="overall">
-            <button @click="active = ''">Overall</button>
-        </div>
     </div>
 </template>
 
 
 
 .<script>
-import {TimelineMax, Elastic} from '../../node_modules/gsap'
+import {TimelineMax, Elastic, gsap} from '../../node_modules/gsap'
 import SkillDescription from './SkillDescription.vue'
+import { CSSPlugin } from 'gsap/CSSPlugin'
 export default {
     components: {SkillDescription},
     data() {
@@ -350,12 +460,18 @@ export default {
     },
     methods: {
         wiggle(element){
+            gsap.registerPlugin(CSSPlugin)
             const tl = new TimelineMax({repeat:0,repeatDelay:2})
                 tl.to(`.${element}` ,0.5,{rotation:50})
                 .to(`.${element}` ,3,{rotation:0,ease:Elastic.easeOut.config(0.9,0.1)});
-        }
+        },
+        goBack() {
+            this.$router.push('/main')
+        } 
     },
-    inject: ['goBack']
+    mounted(){
+        window.scrollTo(0, 0)
+    }
 }
 </script>
 
@@ -367,6 +483,8 @@ export default {
         width: 100%;
         background-color: #fdf5e6;
         padding-bottom: 5rem;
+        height: auto;
+        padding-top: 4rem;
 
         .logos{
             display: flex;
@@ -378,6 +496,7 @@ export default {
             .logo{
                 img{
                     width: 10rem;
+                    margin: 0 0.1rem;
 
                     &:hover{
                         cursor: pointer;
@@ -431,7 +550,7 @@ export default {
             min-height: 20vh;
 
             li{
-                width: 40%;
+                width: 100%;
                 display: flex;
                 justify-content: space-evenly;
 
@@ -444,7 +563,7 @@ export default {
                 }
 
                 i{
-                    width: 30%;
+                    width: 50%;
                     text-align: left;
                     margin-left: 2rem;
                     font-size: 2rem;
@@ -455,7 +574,7 @@ export default {
         .arrow{
             position: fixed;
             left: 2rem;
-            bottom: 2rem;
+            top: 2rem;
             font-size: 2rem;
             display: flex;
             align-items: center;
@@ -475,26 +594,32 @@ export default {
             }
         }
 
-        .overall{
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
+        .overall-container{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 3rem 0;
+            .overall{
+                margin: auto;
 
-            button{
-                padding: 1rem 3rem;
-                background-color: transparent;
-                border: 0.2rem solid #000;
-                text-transform: uppercase;
-                letter-spacing: 0.1rem;
-                transition: all 0.4s;
+                button{
+                    padding: 1rem 3rem;
+                    background-color: transparent;
+                    border: 0.2rem solid #000;
+                    text-transform: uppercase;
+                    letter-spacing: 0.1rem;
+                    transition: all 0.4s;
 
-                &:hover{
-                    background-color: #000;
-                    color: #fff;
-                    cursor: pointer;
+                    &:hover{
+                        background-color: #000;
+                        color: #fff;
+                        cursor: pointer;
+                    }
                 }
             }
         }
+        
     }
 
     .skill-show-enter-from{
@@ -518,6 +643,12 @@ export default {
                     padding: 1rem;
                 }
             }
+        }
+    }
+
+    @media(max-width: 1100px){
+        .skills{
+            padding-top: 5rem;
         }
     }
 

@@ -14,23 +14,27 @@
 </template>
 
 <script>
-import {Elastic, TimelineMax} from '../../node_modules/gsap';
+import {Elastic, TimelineMax, gsap} from '../../node_modules/gsap';
+import { CSSPlugin } from 'gsap/CSSPlugin'
 export default {
     
     mounted(){
+        gsap.registerPlugin(CSSPlugin)
                 const tl = new TimelineMax({repeat:0,repeatDelay:0})
-                tl.to(`.star1` ,0.2,{scale:1.2, ease:Elastic.easeOut.config(0.9,0.1)})
+                tl.to('.star1' ,0.2,{scale:1.2, ease:Elastic.easeOut.config(0.9,0.1)})
                 .to('.star2', 0.2,{scale:1.2, ease:Elastic.easeOut.config(0.9,0.1)})
                 .to('.star3', 0.2,{scale:1.2, ease:Elastic.easeOut.config(0.9,0.1)})
                 .to('.star4', 0.2,{scale:1.2, ease:Elastic.easeOut.config(0.9,0.1)})
                 .to('.star5', 0.2,{scale:1.2, ease:Elastic.easeOut.config(0.9,0.1)})
+
+        window.scrollTo(0, 0)
     }
 }
 </script>
 
 <style lang="scss" scoped>
     .skill-description{
-            height: 100%;
+            min-height: 70vh;
             width: 100%;
             padding: 2rem;
             margin: auto;
@@ -48,6 +52,8 @@ export default {
             p{
                 font-size: 2rem;
                 text-align: justify;
+                width: 70%;
+                margin: 0 auto;
             }
         }
 </style>

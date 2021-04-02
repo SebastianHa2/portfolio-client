@@ -12,7 +12,10 @@
                 <a target="_blank" href="https://github.com/SebastianHa2/clothing-shop-demo/tree/master"><button>Code</button></a>
             </div>
             <div class="project-display">
-                <img src="../assets/videos/clothing-shop.gif">
+                <div class="gif-container">
+                    <img class="gif" src="../assets/videos/clothing-shop.gif">
+                    <img src="../assets/videos/clothing-shop.jpg" alt="clothing-shop-img" class="loading">
+                </div>
                 <div class="tools">
                     <img src="../assets/logos/html.png" alt="html-tool">
                     <img src="../assets/logos/sass.png" class="sass" alt="sass-tool">
@@ -29,7 +32,10 @@
                 <a target="_blank" href="https://github.com/SebastianHa2/cinema-website"><button>Code</button></a>
             </div>
             <div class="project-display">
-                <img src="../assets/videos/cinema-website.gif">
+                <div class="gif-container">
+                    <img class="gif" src="../assets/videos/cinema-website.gif">
+                    <img src="../assets/videos/cinema-website.jpg" alt="cinema-website-img" class="loading">
+                </div>
                 <div class="tools">
                     <img src="../assets/logos/html.png" alt="html-tool">
                     <img src="../assets/logos/css.png" alt="css-tool">
@@ -46,7 +52,10 @@
                 <a target="_blank" href="https://github.com/SebastianHa2/weather-app/tree/master"><button>Code</button></a>
             </div>
             <div class="project-display">
-                <img src="../assets/videos/weather-app.gif">
+                <div class="gif-container">
+                     <img class="gif" src="../assets/videos/weather-app.gif">
+                    <img src="../assets/videos/weather-app.jpg" alt="weather-app-img" class="loading">
+                </div>
                 <div class="tools">
                     <img src="../assets/logos/html.png" alt="html-tool">
                     <img src="../assets/logos/css.png" alt="css-tool">
@@ -63,7 +72,10 @@
                 <a target="_blank" href="https://github.com/SebastianHa2/gym-website"><button>Code</button></a>
             </div>
             <div class="project-display">
-                <img src="../assets/videos/gym-website.gif">
+                <div class="gif-container">
+                    <img class="gif" src="../assets/videos/gym-website.gif">
+                    <img src="../assets/videos/gym-website.jpg" alt="gym-website-img" class="loading">
+                </div>
                 <div class="tools">
                     <img src="../assets/logos/html.png" alt="html-tool">
                     <img src="../assets/logos/css.png" alt="css-tool">
@@ -79,7 +91,10 @@
                 <a target="_blank" href="https://github.com/SebastianHa2/cars-website"><button>Code</button></a>
             </div>
             <div class="project-display">
-                <img src="../assets/videos/car-website.gif">
+                <div class="gif-container">
+                    <img class="gif" src="../assets/videos/car-website.gif">
+                    <img src="../assets/videos/car-website.jpg" alt="car-website-img" class="loading">
+                </div>
                 <div class="tools">
                     <img src="../assets/logos/html.png" alt="html-tool">
                     <img src="../assets/logos/css.png" alt="css-tool">
@@ -92,7 +107,14 @@
 
 <script>
 export default {
-    inject: ['goBack']
+    methods: {
+        goBack() {
+            this.$router.push('/main')
+        } 
+    },
+    mounted(){
+        window.scrollTo(0, 0)
+    }
 }
 </script>
 
@@ -104,7 +126,7 @@ export default {
         padding-top: 4rem;
 
         .arrow{
-            position: fixed;
+            position: absolute;
             left: 2rem;
             top: 2rem;
             font-size: 2rem;
@@ -185,10 +207,27 @@ export default {
                 align-items: center;
 
                 
-                img{
+                .gif-container{
                     height: 50%;
                     width: 80%;
                     margin-bottom: 1rem;
+                    position: relative;
+
+                    .gif{
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        left: 0; 
+                        right: 0;
+                        height: 100%;
+                        width: 100%;
+                        z-index: 100;
+                    }
+
+                    .loading{
+                        height: 100%;
+                        width: 100%;
+                    }
                 }
 
                 .tools{

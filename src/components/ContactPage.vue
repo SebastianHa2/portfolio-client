@@ -7,7 +7,7 @@
         </div>
     </transition>
     <div class="contact-container">
-        <div class="arrow" @click="goBack('main-page')">
+        <div class="arrow" @click="goBack()">
             <i class="fas fa-chevron-left"></i>
             <p>Go back</p>
         </div>
@@ -76,7 +76,6 @@
 <script>
 import axios from 'axios'
 export default {
-    inject: ['goBack'],
     data() {
         return{
             name: '',
@@ -121,10 +120,13 @@ export default {
         
         async registerUser(data) {
             try {
-                let response = await axios.post('http://localhost:4000/', data);
-                console.log(response)
+                await axios.post('http://localhost:8080/', data);
                 document.body.style.overflow = "hidden"
                 this.messageSent = true;
+                this.name = ''
+                this.subject = ''
+                this.email = ''
+                this.message = ''
                 setTimeout(() => {
                     document.body.style.overflow = "visible"
                     this.messageSent = false
@@ -155,7 +157,13 @@ export default {
                 this.registerUser(formData)
 
             }
-        }
+        },
+        goBack() {
+            this.$router.push('/main')
+        } 
+    },
+    mounted(){
+        window.scrollTo(0, 0)
     }
 }
 </script>
@@ -173,18 +181,20 @@ export default {
         z-index: 10;
 
         .message-sent{
-            width: 40vw;
-            height: 20vh;
+            width: 35vw;
+            height: 15vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1rem;
             background-color: #fdf5e6;
             text-transform: uppercase;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            border-radius: 0.4rem;
+            font-weight: 300;
         }
     }
 
@@ -209,9 +219,9 @@ export default {
         display: flex;
 
         .arrow{
-            position: fixed;
+            position: absolute;
             left: 2rem;
-            bottom: 2rem;
+            top: 2rem;
             font-size: 2rem;
             display: flex;
             align-items: center;
@@ -523,19 +533,17 @@ export default {
     /* Media queries */
 
     @media(max-height: 700px){
-        .contact{
-            .contact-container{
-                .contact-1{
-                    height: 70rem;
-                }
-                .contact-2{
-                    .form-container{
-                        form{
-                            height: 100%;
-                            .input{
-                                textarea{
-                                    max-height: 10rem;
-                                }
+        .contact-container{
+            .contact-1{
+                height: 70rem;
+            }
+            .contact-2{
+                .form-container{
+                    form{
+                        height: 100%;
+                        .input{
+                            textarea{
+                                max-height: 10rem;
                             }
                         }
                     }
@@ -544,43 +552,47 @@ export default {
         }
     }
 
+
+
     @media(max-width: 1100px){
-        .contact{
-            .contact-container{
-                flex-direction: column;
-                .contact-1{
-                    width: 100%;
-                }
-                .contact-2{
-                    width: 100%;
-                    padding: 5rem;
-                }
+        .contact-container{
+            flex-direction: column;
+            .contact-1{
+                width: 100%;
+            }
+            .contact-2{
+                width: 100%;
+                padding: 5rem;
+            }
+        }
+    }
+
+    @media(max-width: 1000px){
+        .back-cover{
+            .message-sent{
+                width: 37rem;
             }
         }
     }
 
     @media(max-width: 700px){
-        .contact{
-            .contact-container{
-                .contact-2{
-                    form{
-                        width: 100%;
-                    }
+        .contact-container{
+            .contact-2{
+                form{
+                    width: 100%;
                 }
             }
         }
     }
 
     @media(max-width: 500px){
-        .contact{
-            .contact-container{
-                .contact-2{
-                    padding: 3rem;
-                }
+        .contact-container{
+            .contact-2{
+                padding: 3rem;
+            }
 
-                .contact-1{
-                    padding: 1rem;
-                }
+            .contact-1{
+                padding: 5rem 1rem 1rem 1rem;
             }
         }
     }
