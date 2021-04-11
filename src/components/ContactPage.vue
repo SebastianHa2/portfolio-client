@@ -74,6 +74,7 @@
 </template>
 
 <script>
+import gsap from '../../node_modules/gsap'
 import axios from 'axios'
 export default {
     data() {
@@ -164,6 +165,8 @@ export default {
     },
     mounted(){
         window.scrollTo(0, 0)
+        gsap.from('.telephone', {duration: 1, x: '-100%'})
+        gsap.from('.form-container', {duration: 1, x: '+100%'})
     }
 }
 </script>
@@ -217,6 +220,7 @@ export default {
 
     .contact-container{
         display: flex;
+        overflow: hidden;
 
         .arrow{
             position: absolute;

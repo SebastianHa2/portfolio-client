@@ -13,7 +13,7 @@
             </div>
             <div class="project-display">
                 <div class="gif-container">
-                    <img class="gif" src="../assets/videos/clothing-shop.gif">
+                    <img class="gif" src="../assets/videos/clothing-shop.gif" @load="displayClothingGif($event)">
                     <img src="../assets/videos/clothing-shop.jpg" alt="clothing-shop-img" class="loading">
                 </div>
                 <div class="tools">
@@ -33,7 +33,7 @@
             </div>
             <div class="project-display">
                 <div class="gif-container">
-                    <img class="gif" src="../assets/videos/cinema-website.gif">
+                    <img class="gif" src="../assets/videos/cinema-website.gif" @load="displayCinemaGif($event)">
                     <img src="../assets/videos/cinema-website.jpg" alt="cinema-website-img" class="loading">
                 </div>
                 <div class="tools">
@@ -53,7 +53,7 @@
             </div>
             <div class="project-display">
                 <div class="gif-container">
-                     <img class="gif" src="../assets/videos/weather-app.gif">
+                     <img class="gif" src="../assets/videos/weather-app.gif" @load="displayWeatherGif($event)">
                     <img src="../assets/videos/weather-app.jpg" alt="weather-app-img" class="loading">
                 </div>
                 <div class="tools">
@@ -73,7 +73,7 @@
             </div>
             <div class="project-display">
                 <div class="gif-container">
-                    <img class="gif" src="../assets/videos/gym-website.gif">
+                    <img class="gif" src="../assets/videos/gym-website.gif" @load="displayGymGif($event)">
                     <img src="../assets/videos/gym-website.jpg" alt="gym-website-img" class="loading">
                 </div>
                 <div class="tools">
@@ -92,7 +92,7 @@
             </div>
             <div class="project-display">
                 <div class="gif-container">
-                    <img class="gif" src="../assets/videos/car-website.gif">
+                    <img class="gif" src="../assets/videos/car-website.gif" @load="displayCarsGif($event)">
                     <img src="../assets/videos/car-website.jpg" alt="car-website-img" class="loading">
                 </div>
                 <div class="tools">
@@ -110,7 +110,23 @@ export default {
     methods: {
         goBack() {
             this.$router.push('/main')
-        } 
+        },
+
+        displayClothingGif(event) {
+            event.target.style.visibility = 'visible'
+        },
+        displayCinemaGif(event) {
+            event.target.style.visibility = 'visible'
+        },
+        displayWeatherGif(event) {
+            event.target.style.visibility = 'visible'
+        },
+        displayGymGif(event) {
+            event.target.style.visibility = 'visible'
+        },
+        displayCarsGif(event) {
+            event.target.style.visibility = 'visible'
+        },
     },
     mounted(){
         window.scrollTo(0, 0)
@@ -121,9 +137,10 @@ export default {
 <style lang="scss" scoped>
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
     .projects{
-        width: 100vw;
+        width: 100%;
         background-color: #fdf5e6;
         padding-top: 4rem;
+        overflow: hidden;
 
         .arrow{
             position: absolute;
@@ -208,8 +225,8 @@ export default {
 
                 
                 .gif-container{
-                    height: 50%;
-                    width: 80%;
+                    height: 40%;
+                    width: 70%;
                     margin-bottom: 1rem;
                     position: relative;
 
@@ -222,6 +239,7 @@ export default {
                         height: 100%;
                         width: 100%;
                         z-index: 100;
+                        visibility: hidden;
                     }
 
                     .loading{
@@ -272,10 +290,6 @@ export default {
         .projects{
             .project{
                 .project-display{
-                    video{
-                        width: 100%;
-                        height: 70%;
-                    }
 
                     .tools{
                         img{

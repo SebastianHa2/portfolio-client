@@ -21,8 +21,8 @@
                 </nav>
             </div>
             <div class="about-me">
-                <h2>A <span>little</span> bit about coding and I</h2>
-                <p>I am a young aspiring developer. I was always a more "programmatically" thinking person, who often heard "it's because you spend so much time in front of that computer". So when I first set off on my coding journey, even though first days, weeks and months were strenous, to put it mildly, I knew I was never going to look back. This was expected, because, how do you talk to someone if you don't speak their language? HTML and CSS were my first friends. They're easier to get along with, I would say, because they show much more than they speak. With them I learned how to structure and style pages in any way I like, without the help of any external libraries or boilerplates, now this is freedom. There came a limit however, when I wanted slides to move, display something dynamically or else, they just kind of looked at me. I knew it was time to meet Vanilla JavaScript. JS is much more sophisticated and logical, but this is why I fell in love with it, if you'll command it right, there is nothing in web development it won't do for you, I learned that very quickly when I saw my websites coming to life with interactiveness. This is when projects presented in this portfolio also started coming into existance. After months of failures and successes, googling, asking and researching, JavaScript and I came to a very good understanding and he decided to introduce me to family, Vue.js, who has helped me build my first demo single-page websites and is helping me build this portfolio. From then on, came a landslide, with Node.js, Express.js, MySQL, MongoDB...  At the end, I cannot fail to mention, VS Code who helps me communicate, Webpack who always keeps everyone together, GIT who always kept us safe and commited.
+                <h2 class="about-me-heading">A <span>little</span> bit about coding and I</h2>
+                <p class="about-me-paragraph">I am a young aspiring developer. I was always a more "programmatically" thinking person, who often heard "it's because you spend so much time in front of that computer". So when I first set off on my coding journey, even though first days, weeks and months were strenous, to put it mildly, I knew I was never going to look back. This was expected, because, how do you talk to someone if you don't speak their language? HTML and CSS were my first friends. They're easier to get along with, I would say, because they show much more than they speak. With them I learned how to structure and style pages in any way I like, without the help of any external libraries or boilerplates, now this is freedom. There came a limit however, when I wanted slides to move, display something dynamically or else, they just kind of looked at me. I knew it was time to meet Vanilla JavaScript. JS is much more sophisticated and logical, but this is why I fell in love with it, if you'll command it right, there is nothing in web development it won't do for you, I learned that very quickly when I saw my websites coming to life with interactiveness. This is when projects presented in this portfolio also started coming into existance. After months of failures and successes, googling, asking and researching, JavaScript and I came to a very good understanding and he decided to introduce me to family, Vue.js, who has helped me build my first demo single-page websites and is helping me build this portfolio. From then on, came a landslide, with Node.js, Express.js, MySQL, MongoDB...  At the end, I cannot fail to mention, VS Code who helps me communicate, Webpack who always keeps everyone together, GIT who always kept us safe and commited.
                 </p>
             </div>
         </div>
@@ -50,6 +50,7 @@
 </template>
 
 <script>
+import gsap from '../../node_modules/gsap'
 export default {
     data() {
         return{
@@ -58,6 +59,11 @@ export default {
     },
     mounted(){
         window.scrollTo(0, 0)
+        gsap.from('.picture-of-me', {duration: 1, right: '-100vw'})
+        gsap.from('.name', {duration: 1, y: '-100%'})
+        gsap.from('.btn-flip', {duration: 0.5, opacity: '0', stagger: 0.3})
+        gsap.from('.about-me-heading', {duration: 1, x: '-100%'})
+        gsap.from('.about-me-paragraph', {duration: 1, x: '+100%'})
     }
 }
 </script>
@@ -71,6 +77,7 @@ export default {
         width: 100vw;
         background-color: #fdf5e6;
         position: relative;
+        overflow: hidden;
 
         .copy{
             position: absolute;
@@ -140,15 +147,20 @@ export default {
         $speed: 0.5s;
 
         .navigation, .navigation-2{
-            width: 100%;
+            width: 70vw;
             height: 15vh;
             nav{
-                width: 50%;
+                width: 100%;
                 height: 100%;
                 display: flex;
                 align-items: center;
                 justify-content: space-around;
                 padding-left: 1rem;
+
+                .skills-btn, .projects, .contact-me, .resume{
+                    width: 13.5rem;
+                }
+
                 .btn-flip{
                     opacity: 1;
                     outline: 0;
@@ -161,6 +173,7 @@ export default {
                     text-decoration: none;
                     font-family: 'Open Sans';
                     text-transform: uppercase;
+                    width: 100%;
                     
                     &:hover{
                         cursor: pointer;
@@ -254,7 +267,7 @@ export default {
             .navigation{
                 height: 20vh;
                 nav{
-                    width: 70%;
+                    width: 100%;
                 }
             }
         }
@@ -293,6 +306,7 @@ export default {
             }
 
             .navigation{
+                width: 100%;
                 nav{
                     width: 100%;
                 }
@@ -338,14 +352,14 @@ export default {
         }
     }
 
-    @media(max-width: 600px){
+    @media(max-width: 650px){
         .main-page{
             display: flex;
             flex-direction: column;
 
             .picture-of-me{
                 position: relative;
-                height: 50vh;
+                height: 70vh;
                 width: 100vw;
                 top: 0;
             }
@@ -379,7 +393,7 @@ export default {
         }
     }
 
-    @media(max-width: 500px){
+    @media(max-width: 650px){
         .main-page{
             .navigation-2{
                     height: 30vh;

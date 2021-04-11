@@ -46,7 +46,7 @@
             </div>
         </transition>
         <transition name="skill-show">
-            <div class="skill-description" v-if="active === ''">
+            <div class="skill-description overall" v-if="active === ''">
                 <skill-description>
                     <template v-slot:heading>
                         <h2>Overall</h2>
@@ -209,7 +209,7 @@
                         </div>
                     </template>
                     <template v-slot:paragraph>
-                        Learning Node.js has given me the ability to launch both the front-end and the back-end using JavaScript. I've become comfortable with the logic between front-end, back-end and database communication using Node.js and in it the Express.js framework.
+                        Learning Node.js has given me the ability to write both the front-end and the back-end using JavaScript. I've become comfortable with the logic between front-end, back-end and database communication using Node.js and in it the Express.js framework.
                     </template>
                     <template v-slot:list>
                         <ul>
@@ -218,7 +218,7 @@
                             <li><p>CRUD</p> <i class="fas fa-check"></i></li>
                             <li><p>Sequelize</p> <i class="fas fa-check"></i></li>
                             <li><p>Mongoose</p> <i class="fas fa-check"></i></li>
-                            <li><p>Tokens</p> <i class="fas fa-check"></i></li>
+                            <li><p>Sessions/Tokens</p> <i class="fas fa-check"></i></li>
                             <li><p>MVC</p> <i class="fas fa-check"></i></li>
                             <li><p>GraphQl</p> <i class="fas fa-check"></i></li>
                         </ul>
@@ -373,7 +373,6 @@
                         <ul>
                             <li><p>Configuration</p> <i class="fas fa-check"></i></li>
                             <li><p>Loaders</p> <i class="fas fa-check"></i></li>
-                            <li><p>Loaders</p> <i class="fas fa-check"></i></li>
                             <li><p>Plugins</p> <i class="fas fa-check"></i></li>
                         </ul>
                     </template>
@@ -471,6 +470,8 @@ export default {
     },
     mounted(){
         window.scrollTo(0, 0)
+        gsap.from('.logo', {duration: 0.5, opacity: '0', stagger: 0.5})
+        gsap.from('.overall', {duration: 1, y: '+100%'})
     }
 }
 </script>
