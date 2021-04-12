@@ -13,8 +13,7 @@
             </div>
             <div class="project-display">
                 <div class="gif-container">
-                    <img class="gif" src="../assets/videos/clothing-shop.gif" @load="displayClothingGif($event)">
-                    <img src="../assets/videos/clothing-shop.jpg" alt="clothing-shop-img" class="loading">
+                    <img src="../assets/videos/clothing-shop.jpg" alt="clothing-shop-img" class="loading clothing-gif">
                 </div>
                 <div class="tools">
                     <img src="../assets/logos/html.png" alt="html-tool">
@@ -33,8 +32,7 @@
             </div>
             <div class="project-display">
                 <div class="gif-container">
-                    <img class="gif" src="../assets/videos/cinema-website.gif" @load="displayCinemaGif($event)">
-                    <img src="../assets/videos/cinema-website.jpg" alt="cinema-website-img" class="loading">
+                    <img src="../assets/videos/cinema-website.jpg" alt="cinema-website-img" class="loading cinema-gif">
                 </div>
                 <div class="tools">
                     <img src="../assets/logos/html.png" alt="html-tool">
@@ -53,8 +51,7 @@
             </div>
             <div class="project-display">
                 <div class="gif-container">
-                     <img class="gif" src="../assets/videos/weather-app.gif" @load="displayWeatherGif($event)">
-                    <img src="../assets/videos/weather-app.jpg" alt="weather-app-img" class="loading">
+                    <img src="../assets/videos/weather-app.jpg" alt="weather-app-img" class="loading weather-gif">
                 </div>
                 <div class="tools">
                     <img src="../assets/logos/html.png" alt="html-tool">
@@ -73,8 +70,7 @@
             </div>
             <div class="project-display">
                 <div class="gif-container">
-                    <img class="gif" src="../assets/videos/gym-website.gif" @load="displayGymGif($event)">
-                    <img src="../assets/videos/gym-website.jpg" alt="gym-website-img" class="loading">
+                    <img src="../assets/videos/gym-website.jpg" alt="gym-website-img" class="loading gym-gif">
                 </div>
                 <div class="tools">
                     <img src="../assets/logos/html.png" alt="html-tool">
@@ -92,8 +88,7 @@
             </div>
             <div class="project-display">
                 <div class="gif-container">
-                    <img class="gif" src="../assets/videos/car-website.gif" @load="displayCarsGif($event)">
-                    <img src="../assets/videos/car-website.jpg" alt="car-website-img" class="loading">
+                    <img src="../assets/videos/car-website.jpg" alt="car-website-img" class="loading cars-gif">
                 </div>
                 <div class="tools">
                     <img src="../assets/logos/html.png" alt="html-tool">
@@ -106,30 +101,48 @@
 </template>
 
 <script>
+import clothingGifUrl from '../../public/assets/static/clothing-shop.gif'
+import cinemaGifUrl from '../../public/assets/static/cinema-website.gif'
+import weatherGifUrl from '../../public/assets/static/weather-app.gif'
+import gymGifUrl from '../../public/assets/static/gym-website.gif'
+import carsGifUrl from '../../public/assets/static/car-website.gif'
 export default {
     methods: {
         goBack() {
             this.$router.push('/main')
         },
 
-        displayClothingGif(event) {
-            event.target.style.visibility = 'visible'
-        },
-        displayCinemaGif(event) {
-            event.target.style.visibility = 'visible'
-        },
-        displayWeatherGif(event) {
-            event.target.style.visibility = 'visible'
-        },
-        displayGymGif(event) {
-            event.target.style.visibility = 'visible'
-        },
-        displayCarsGif(event) {
-            event.target.style.visibility = 'visible'
-        },
+        asyncImageLoader(url){
+            return new Promise( (resolve, reject) => {
+                let image = new Image()
+                image.src = url
+                image.onload = () => resolve(image)
+                image.onerror = () => reject(new Error('could not load image'))
+            })
+        }
     },
     mounted(){
         window.scrollTo(0, 0)
+
+        this.asyncImageLoader(clothingGifUrl).then(result => {
+            document.querySelector('.clothing-gif').src = result.src
+        })
+        
+        this.asyncImageLoader(cinemaGifUrl).then(result => {
+            document.querySelector('.cinema-gif').src = result.src
+        })
+
+        this.asyncImageLoader(weatherGifUrl).then(result => {
+            document.querySelector('.weather-gif').src = result.src
+        })
+
+        this.asyncImageLoader(gymGifUrl).then(result => {
+            document.querySelector('.gym-gif').src = result.src
+        })
+
+        this.asyncImageLoader(carsGifUrl).then(result => {
+            document.querySelector('.cars-gif').src = result.src
+        })
     }
 }
 </script>
