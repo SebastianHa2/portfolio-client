@@ -1,40 +1,43 @@
 <template>
     <div class="skills">
         <div class="logos">
-            <div class="logo html" @mouseenter="wiggle('html'), active = 'html'"> 
+            <div class="logo html" @click="wiggle('html'), active = 'html'"> 
                 <img src="../assets/logos/html.png" alt="html-logo">
             </div>
-            <div class="logo css" @mouseenter="wiggle('css'), active = 'css'">
+            <div class="logo css" @click="wiggle('css'), active = 'css'">
                 <img src="../assets/logos/css.png" alt="css-logo">
             </div>
-            <div class="logo js" @mouseenter="wiggle('js'), active = 'js'">
+            <div class="logo js" @click="wiggle('js'), active = 'js'">
                 <img src="../assets/logos/js.png" alt="js-logo">
             </div>
-            <div class="logo vue" @mouseenter="wiggle('vue'), active = 'vue'">
+            <div class="logo vue" @click="wiggle('vue'), active = 'vue'">
                 <img src="../assets/logos/vue.png" alt="vue-logo">
             </div>
-            <div class="logo node" @mouseenter="wiggle('node'), active = 'node'">
+            <div class="logo node" @click="wiggle('node'), active = 'node'">
                 <img src="../assets/logos/node.png" alt="node-logo">
             </div>
-            <div class="logo mysql" @mouseenter="wiggle('mysql'), active = 'mysql'">
+            <div class="logo graphql" @click="wiggle('graphql'), active = 'graphql'">
+                <img src="../assets/logos/graphql.png" alt="graphql-logo">
+            </div>
+            <div class="logo mysql" @click="wiggle('mysql'), active = 'mysql'">
                 <img src="../assets/logos/mysql.png" alt="mysql-logo">
             </div>
-            <div class="logo mongodb" @mouseenter="wiggle('mongodb'), active = 'mongodb'">
+            <div class="logo mongodb" @click="wiggle('mongodb'), active = 'mongodb'">
                 <img src="../assets/logos/mongodb.png" alt="mongodb-logo">
             </div>
-            <div class="logo sass" @mouseenter="wiggle('sass'), active = 'sass'">
+            <div class="logo sass" @click="wiggle('sass'), active = 'sass'">
                 <img src="../assets/logos/sass.png" alt="sass-logo">
             </div>
-            <div class="logo jquery" @mouseenter="wiggle('jquery'), active = 'jquery'">
+            <div class="logo jquery" @click="wiggle('jquery'), active = 'jquery'">
                 <img src="../assets/logos/jquery.png" alt="jquery-logo">
             </div>
-            <div class="logo webpack" @mouseenter="wiggle('webpack'), active = 'webpack'">
+            <div class="logo webpack" @click="wiggle('webpack'), active = 'webpack'">
                 <img src="../assets/logos/webpack.png" alt="webpack-logo">
             </div>
-            <div class="logo git" @mouseenter="wiggle('git'), active = 'git'">
+            <div class="logo git" @click="wiggle('git'), active = 'git'">
                 <img src="../assets/logos/git.png" alt="git-logo">
             </div>
-            <div class="logo npm" @mouseenter="wiggle('npm'), active = 'npm'">
+            <div class="logo npm" @click="wiggle('npm'), active = 'npm'">
                 <img src="../assets/logos/npm.png" alt="git-logo">
             </div>
         </div>
@@ -52,7 +55,7 @@
                         <h2>Overall</h2>
                     </template>
                     <template v-slot:paragraph>
-                        <p>I have always prided myself in my <span class="highlight-1">analytical thinking</span> and approach. During my time studying Actuarial Maths I have enjoyed modules such as Analytical Modelling, Statistical Analysis and Economics. I strive in <span class="highlight-2">problem-solving</span>, be it real-world decisions, mathematical questions, chess puzzles, I love the feeling of a problem solved and we all know the feeling of code running after hours of failures. The key for me is always keep an <span class="highlight-1">open mind - think creatively</span>, take <span class="highlight-2">initiative</span> and stay <span class="highlight-3">resilient</span>. As a person I am <span class="highlight-2">open and friendly</span> which makes it very easy for me to engage in <span class="highlight-1">teamwork</span>. <br><br> <span class="highlight-4">When it comes to my coding skills hover over a logo to see what I know!</span> </p>
+                        <p>I have always prided myself in my <span class="highlight-1">analytical thinking</span> and approach. During my time studying Actuarial Maths I have enjoyed modules such as Analytical Modelling, Statistical Analysis and Economics. I strive in <span class="highlight-2">problem-solving</span>, be it real-world decisions, mathematical questions, chess puzzles, I love the feeling of a problem solved and we all know the feeling of code running after hours of failures. The key for me is always keep an <span class="highlight-1">open mind - think creatively</span>, take <span class="highlight-2">initiative</span> and stay <span class="highlight-3">resilient</span>. As a person I am <span class="highlight-2">open and friendly</span> which makes it very easy for me to engage in <span class="highlight-1">teamwork</span>. <br><br> <span class="highlight-4">When it comes to my coding skills click on a logo to see what I know!</span> </p>
                         <i class="star4 star5 star2 star1 star3"></i>
                     </template>
                 </skill-description>
@@ -142,11 +145,10 @@
                         </div>
                     </template>
                     <template v-slot:paragraph>
-                        With the help of Jon Duckett's incredible JavaScript and jQuery, YouTube tutorials, Brad Traversy's udemy course Modern JavaScript From the Beginning and A LOT of practice, I build strong practical knowledge of JavaScript's core concepts.
+                        JavaScript is another one of the technologies that never leave my side. After completing Jon Duckett's book on JS, Brad Traversy's udemy course and a lot of projects of my own I feel very comfortable writing clean JavaScript code. However, Kyle Simpson and his You Don't Know JS series have made me realise that there is a long way to go. Definitely someday...
                     </template>
                     <template v-slot:list>
                         <ul>
-                            <li><p>Fundamentals</p> <i class="fas fa-check"></i></li>
                             <li><p>DOM Manipulation and Events</p> <i class="fas fa-check"></i></li>
                             <li><p>OOP in JavaScript</p> <i class="fas fa-check"></i></li>
                             <li><p>Asynchronous Programming</p> <i class="fas fa-check"></i></li>
@@ -169,7 +171,7 @@
                             <i class="fas fa-star star1"></i>
                             <i class="fas fa-star star2"></i>
                             <i class="fas fa-star star3"></i>
-                            <i class="fas fa-star star4"></i>
+                            <i class="fas fa-star-half-alt star4"></i>
                             <i class="far fa-star"></i>
                             <i class="star5"></i>
                         </div>
@@ -180,11 +182,10 @@
                     <template v-slot:list>
                         <ul>
                             <li><p>Core Concepts in Vue</p> <i class="fas fa-check"></i></li>
-                            <li><p>Vue CLI</p> <i class="fas fa-check"></i></li>
+                            <li><p>Vue Server Side Rendering</p> <i class="fas fa-check"></i></li>
                             <li><p>Conditional Content</p> <i class="fas fa-check"></i></li>
                             <li><p>Components</p> <i class="fas fa-check"></i></li>
                             <li><p>Forms and validation</p> <i class="fas fa-check"></i></li>
-                            <li><p>Http Requests</p> <i class="fas fa-check"></i></li>
                             <li><p>Vue Router and Vuex</p> <i class="fas fa-check"></i></li>
                             <li><p>Animations and Transitions</p> <i class="fas fa-check"></i></li>
                         </ul>
@@ -209,18 +210,48 @@
                         </div>
                     </template>
                     <template v-slot:paragraph>
-                        Learning Node.js has given me the ability to write both the front-end and the back-end using JavaScript. I've become comfortable with the logic between front-end, back-end and database communication using Node.js and in it the Express.js framework.
+                        Learning Node.js and its framework Express.js has given me the ability to create robust REST APIs as well as create server-side rendered templates with templating engines. I've taken my time to carefully learn how to handle errors and validation on the server-side, authentication, authorization, use databases in my projects and much more. Everyday I discover new possibilities and packages with Node.js.
                     </template>
                     <template v-slot:list>
                         <ul>
                             <li><p>Express.js</p> <i class="fas fa-check"></i></li>
+                            <li><p>Templating engines like EJS</p> <i class="fas fa-check"></i></li>
                             <li><p>Rest APIs</p> <i class="fas fa-check"></i></li>
-                            <li><p>CRUD</p> <i class="fas fa-check"></i></li>
-                            <li><p>Sequelize</p> <i class="fas fa-check"></i></li>
-                            <li><p>Mongoose</p> <i class="fas fa-check"></i></li>
-                            <li><p>Sessions/Tokens</p> <i class="fas fa-check"></i></li>
+                            <li><p>Websockets / Socket.io</p> <i class="fas fa-check"></i></li>
+                            <li><p>Sequelize and Mongoose</p> <i class="fas fa-check"></i></li>
+                            <li><p>Authorization with sessions OR JWTs</p> <i class="fas fa-check"></i></li>
                             <li><p>MVC</p> <i class="fas fa-check"></i></li>
                             <li><p>GraphQl</p> <i class="fas fa-check"></i></li>
+                        </ul>
+                    </template>
+                </skill-description>
+            </div>
+        </transition>
+
+        <transition name="skill-show">
+            <div v-if="active === 'graphql'">
+                <skill-description>
+                    <template v-slot:heading>
+                        GraphQL
+                    </template>
+                    <template v-slot:rating>
+                        <div class="rating">
+                            <i class="fas fa-star star1"></i>
+                            <i class="fas fa-star star2"></i>
+                            <i class="star3"></i>
+                            <i class="star4"></i>
+                            <i class="star5"></i>
+                        </div>
+                    </template>
+                    <template v-slot:paragraph>
+                        I've converted some of my projects from REST APIs to utilize GraphQL and become quite comfortable in creating GraphQL APIs. While GraphQL can be a bit more verbose, I prefer its data fetching approach to just one endpoint and possibility of personalising the fetched data allowing for better performance. 
+                    </template>
+                    <template v-slot:list>
+                        <ul>
+                            <li><p>Building APIs</p> <i class="fas fa-check"></i></li>
+                            <li><p>Queries</p> <i class="fas fa-check"></i></li>
+                            <li><p>Error Handling</p> <i class="fas fa-check"></i></li>
+                            <li><p>GraphiQL</p> <i class="fas fa-check"></i></li>
                         </ul>
                     </template>
                 </skill-description>
@@ -252,6 +283,7 @@
                             <li><p>Data Realtionships</p> <i class="fas fa-check"></i></li>
                             <li><p>Logical Operators</p> <i class="fas fa-check"></i></li>
                             <li><p>Sequelize</p> <i class="fas fa-check"></i></li>
+                            <li><p>Pagination</p> <i class="fas fa-check"></i></li>
                         </ul>
                     </template>
                 </skill-description>
@@ -283,6 +315,7 @@
                             <li><p>Embedded Documents</p> <i class="fas fa-check"></i></li>
                             <li><p>Logical Operators</p> <i class="fas fa-check"></i></li>
                             <li><p>Mogoose</p> <i class="fas fa-check"></i></li>
+                            <li><p>Pagination</p> <i class="fas fa-check"></i></li>
                         </ul>
                     </template>
                 </skill-description>
@@ -300,7 +333,7 @@
                             <i class="fas fa-star star1"></i>
                             <i class="fas fa-star star2"></i>
                             <i class="fas fa-star star3"></i>
-                            <i class="fas fa-star star4"></i>
+                            <i class="star4"></i>
                             <i class="far fa-star"></i>
                             <i class="star5"></i>
                         </div>
@@ -360,14 +393,14 @@
                         <div class="rating">
                             <i class="fas fa-star star1"></i>
                             <i class="fas fa-star star2"></i>
-                            <i class="fas fa-star star3"></i>
+                            <i class="fas fa-star-half-alt star3"></i>
                             <i class="far fa-star"></i>
                             <i class="far fa-star"></i>
                             <i class="star4 star5"></i>
                         </div>
                     </template>
                     <template v-slot:paragraph>
-                        My need for webpack arose when I built a bigger website without the use of a JavaScript framework. Having more than just one .js and .css file and dependencies all around, I wondered if there was a way to bring it all together. Webpack was the answer, I learned to utilize the module bundler through practice and acquired a good working knowledge of it.
+                        My need for webpack arose when I built a bigger website without the use of a JavaScript framework. Having more than just one .js and .css files and dependencies all around, I wondered if there was a way to bring it all together. Webpack was the answer, I learned to utilize the module bundler through practice and acquired a good working knowledge of it.
                     </template>
                     <template v-slot:list>
                         <ul>
@@ -391,7 +424,7 @@
                             <i class="fas fa-star star1"></i>
                             <i class="fas fa-star star2"></i>
                             <i class="fas fa-star star3"></i>
-                            <i class="far fa-star"></i>
+                            <i class="fas fa-star star4"></i>
                             <i class="far fa-star"></i>
                             <i class="star4 star5"></i>
                         </div>
@@ -402,8 +435,8 @@
                     <template v-slot:list>
                         <ul>
                             <li><p>Basic Snapshotting</p> <i class="fas fa-check"></i></li>
+                            <li><p>Continuous Integration</p> <i class="fas fa-check"></i></li>
                             <li><p>Branching and merging</p> <i class="fas fa-check"></i></li>
-                            <li><p>Sharing and updating</p> <i class="fas fa-check"></i></li>
                         </ul>
                     </template>
                 </skill-description>
@@ -496,7 +529,7 @@ export default {
             flex-wrap: wrap;
             .logo{
                 img{
-                    width: 10rem;
+                    width: 9rem;
                     margin: 0 0.1rem;
 
                     &:hover{
@@ -573,7 +606,7 @@ export default {
         }
 
         .arrow{
-            position: fixed;
+            position: absolute;
             left: 2rem;
             top: 2rem;
             font-size: 2rem;

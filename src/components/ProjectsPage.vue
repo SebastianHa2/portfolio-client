@@ -6,8 +6,28 @@
         </div>
         <div class="project">
             <div class="project-description">
+                <h2>Save Your Recipe SPA</h2>
+                <p>This is a full-stack SPA I built using Vue.js as my front-end framework, Node.js plus Express.js on the server-side and MySQL as the database. On the fron-end I use axios to send requests to a REST API and MySQL queries are handled using the Sequelize ORM. I implemented pagination for the main recipes page. There are register, log-in, create/edit/delete recipe functionalities with validation on both front and back-end. Only users who are logged in can create recipes, and only the creator of a recipe can edit or delete it. Authentication is achieved using a JWT. In addition safety from cross-site request forgery is implemented using csrf tokens. </p>
+                <a target="_blank" href="https://save-your-recipe-full-stack.herokuapp.com/"><button>Live Demo</button></a>
+                <a target="_blank" href="https://github.com/SebastianHa2/recipe-backend"><button>Backend Code</button></a>
+                <a target="_blank" href="https://github.com/SebastianHa2/recipe-frontend"><button>Frontend Code</button></a>
+            </div>
+            <div class="project-display">
+                <div class="gif-container">
+                    <img src="../assets/videos/recipe-spa.png" alt="clothing-shop-img" class="loading recipe-gif">
+                </div>
+                <div class="tools">
+                    <img src="../assets/logos/css.png" alt="css-tool">
+                    <img src="../assets/logos/vue.png" alt="vue-tool">
+                    <img src="../assets/logos/node.png" class="node" alt="node-tool">
+                    <img src="../assets/logos/mysql.png" alt="mysql-tool">
+                </div>
+            </div>
+        </div>
+        <div class="project">
+            <div class="project-description">
                 <h2>Clothing Shop Website</h2>
-                <p>This is a bigger project built using Vue.js framework and SCSS. As all my projects it is fully responsive. It contains two landing pages in both man and woman sections, an items sections in men's sweatshirts and coats. A fully functional shopping-cart which can be tested in Man -> Clothing -> Sweatshirts or Coats which contain demo item displays. Global storage is achieved using Vuex. There is a search option, which searches through all the items once more than two characters have been entered. You can try typing in 'sweat' or 'blue'. The project contains form validations using regular expressions. To checkout you'll be prompted to sign in and you can then register. Once registered you will be able to sign in as your credentials will be updated to local storage. For animations I've used the Vue animation classes, keyframes and for some, the GSAP animations library.</p>
+                <p>This is a bigger project built using Vue.js framework and SCSS. As all my projects it is fully responsive. It contains two landing pages in both man and woman sections, an items sections in men's sweatshirts and coats. A fully functional shopping-cart which can be tested in Man -> Clothing -> Sweatshirts or Coats which contain demo item displays. Global state is achieved using Vuex. There is a search option, which searches through all the items once more than two characters have been entered. You can try typing in 'sweat' or 'blue'. The project contains form validations using regular expressions. To checkout you'll be prompted to sign in and you can then register. Once registered you will be able to sign in as your credentials will be updated to local storage. For animations I've used the Vue animation classes, keyframes and for some, the GSAP animations library.</p>
                 <a target="_blank" href="https://sebastianha2.github.io/clothing-shop-demo/#/"><button>Live Demo</button></a>
                 <a target="_blank" href="https://github.com/SebastianHa2/clothing-shop-demo/tree/master"><button>Code</button></a>
             </div>
@@ -16,9 +36,7 @@
                     <img src="../assets/videos/clothing-shop.jpg" alt="clothing-shop-img" class="loading clothing-gif">
                 </div>
                 <div class="tools">
-                    <img src="../assets/logos/html.png" alt="html-tool">
                     <img src="../assets/logos/sass.png" class="sass" alt="sass-tool">
-                    <img src="../assets/logos/js.png" alt="js-tool">
                     <img src="../assets/logos/vue.png" alt="vue-tool">
                 </div>
             </div>
@@ -26,7 +44,7 @@
         <div class="project">
             <div class="project-description">
                 <h2>Cinema Website</h2>
-                <p>A cinema landing page with a possibility of choosing a film, date, time, type of tickets and finally seats. The design is fully responsive. The whole page is written in CSS3, HTML and Vanilla JavaScript. It was a test of my abilities to write logic for movie filtering by genre, carousel slides, interactive bar indicator and much more. You can proceed to the next page by clicking the little ticket button on one of the films, the film is then saved to local storage as the one you want to buy tickets for. You can choose the date and time for your movie and the type of tickets. On the last page you can choose your seats. The dates, times and seats are dynamically added through JavaScript. The total price shown is also calculated based on the amount and type of tickets you've chosen. The amount of seats is limited to the amount of tickets. I've structured the JavaScript into IFFEs and used used webpack to bundle my .js and css files together. </p>
+                <p>A cinema landing page with a possibility of choosing a film, date, time, type of tickets and finally seats. The design is fully responsive. The whole page is written in CSS3, HTML and Vanilla JavaScript. It was a test of my abilities to write logic for movie filtering by genre, carousel slides, interactive bar indicator and much more. You can proceed to the next page by clicking the little ticket button on one of the films, the film is then saved to local storage as the one you want to buy tickets for. You can choose the date and time for your movie and the type of tickets. On the last page you can choose your seats. The dates, times and seats are dynamically added through JavaScript. The total price shown is also calculated based on the amount and type of tickets you've chosen. The amount of seats is limited to the amount of tickets. I've structured the JavaScript using the Revealing Module Pattern and used webpack to bundle my .js and css files together. </p>
                 <a target="_blank" href="https://sebastianha2.github.io/cinema-website/"><button>Live Demo</button></a>
                 <a target="_blank" href="https://github.com/SebastianHa2/cinema-website"><button>Code</button></a>
             </div>
@@ -45,7 +63,7 @@
         <div class="project">
             <div class="project-description">
                 <h2>Weather Application</h2>
-                <p>This is a fully functional and responsive weather application written in pure JavaScript and connected to the open weather API. I had a problem with the same names of cities in different countries, so I added a drop down menu containing country names and wrote code to match the city to the country id. The HTTP request is then sent using fetch and is prepared to catch ANY errors. In addittion, I wrote code which from the date today gets the next three dates and displays weather for the next three dates. For the display of correct icons, I used the switch statement. The project also involves loops and JavaScript classes.  In this project I used webpack to bundle my .js files and hide the API key using dotenv.s</p>
+                <p>This is a fully functional and responsive weather application written in pure JavaScript and connected to the open weather API. I had a problem with the same names of cities in different countries, so I added a drop down menu containing country names and wrote code to match the city to the country id. The HTTP request is then sent using fetch and is prepared to catch ANY errors. In addittion, I wrote code which from the date today gets the next three dates and displays weather for the next three dates. For the display of correct icons, I used the switch statement. The project also involves loops and JavaScript classes.  In this project I used webpack to bundle my .js files and hide the API key using dotenv.</p>
                 <a target="_blank" href="https://sebastianha2.github.io/weather-app/"><button>Live Demo</button></a>
                 <a target="_blank" href="https://github.com/SebastianHa2/weather-app/tree/master"><button>Code</button></a>
             </div>
@@ -106,6 +124,7 @@ import cinemaGifUrl from '../../public/assets/static/cinema-website.gif'
 import weatherGifUrl from '../../public/assets/static/weather-app.gif'
 import gymGifUrl from '../../public/assets/static/gym-website.gif'
 import carsGifUrl from '../../public/assets/static/car-website.gif'
+import recipeGifUrl from '../../public/assets/static/recipe-spa.gif'
 export default {
     methods: {
         goBack() {
@@ -142,6 +161,10 @@ export default {
 
         this.asyncImageLoader(carsGifUrl).then(result => {
             document.querySelector('.cars-gif').src = result.src
+        })
+
+        this.asyncImageLoader(recipeGifUrl).then(result => {
+            document.querySelector('.recipe-gif').src = result.src
         })
     }
 }
@@ -262,9 +285,10 @@ export default {
                 }
 
                 .tools{
-                    width: 50%;
+                    width: 70%;
                     display: flex;
                     justify-content: space-around;
+                    align-items: center;
                     img{
                         width: 8rem;
                     }
@@ -275,6 +299,11 @@ export default {
 
                     .webpack{
                         width: 9rem;
+                    }
+
+                    .node{
+                        width: 13rem;
+                        height: 7rem;
                     }
                 }
             }
