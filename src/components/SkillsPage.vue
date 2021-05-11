@@ -13,6 +13,9 @@
             <div class="logo vue" @click="wiggle('vue'), active = 'vue'">
                 <img src="../assets/logos/vue.png" alt="vue-logo">
             </div>
+            <div class="logo react" @click="wiggle('react'), active = 'react'">
+                <img src="../assets/logos/react.png" alt="react-logo">
+            </div>
             <div class="logo node" @click="wiggle('node'), active = 'node'">
                 <img src="../assets/logos/node.png" alt="node-logo">
             </div>
@@ -107,7 +110,7 @@
                         <i class="fas fa-star star2"></i>
                         <i class="fas fa-star star3"></i>
                         <i class="fas fa-star star4"></i>
-                        <i class="fas fa-star star5"></i>
+                        <i class="far fa-star star5"></i>
                     </div>
                 </template>
                 <template v-slot:paragraph>
@@ -140,12 +143,11 @@
                             <i class="fas fa-star star2"></i>
                             <i class="fas fa-star star3"></i>
                             <i class="fas fa-star star4"></i>
-                            <i class="far fa-star"></i>
-                            <i class="star5"></i>
+                            <i class="far fa-star star5"></i>
                         </div>
                     </template>
                     <template v-slot:paragraph>
-                        JavaScript is another one of the technologies that never leave my side. After completing Jon Duckett's book on JS, Brad Traversy's udemy course and a lot of projects of my own I feel very comfortable writing clean JavaScript code. However, Kyle Simpson and his You Don't Know JS series have made me realise that there is a long way to go. Definitely someday...
+                        JavaScript is another one of the technologies that never leave my side. After completing Jon Duckett's book on JS, Brad Traversy's udemy course and creating a lot of projects of my own, I feel very comfortable writing clean JavaScript code. I have a great grasp on OOP and some of the design patterns. However, Kyle Simpson and his You Don't Know JS series have made me realise that there is a long way to go. Definitely someday...
                     </template>
                     <template v-slot:list>
                         <ul>
@@ -172,8 +174,7 @@
                             <i class="fas fa-star star2"></i>
                             <i class="fas fa-star star3"></i>
                             <i class="fas fa-star-half-alt star4"></i>
-                            <i class="far fa-star"></i>
-                            <i class="star5"></i>
+                            <i class="far fa-star star5"></i>
                         </div>
                     </template>
                     <template v-slot:paragraph>
@@ -184,10 +185,40 @@
                             <li><p>Core Concepts in Vue</p> <i class="fas fa-check"></i></li>
                             <li><p>Vue Server Side Rendering</p> <i class="fas fa-check"></i></li>
                             <li><p>Conditional Content</p> <i class="fas fa-check"></i></li>
-                            <li><p>Components</p> <i class="fas fa-check"></i></li>
                             <li><p>Forms and validation</p> <i class="fas fa-check"></i></li>
                             <li><p>Vue Router and Vuex</p> <i class="fas fa-check"></i></li>
                             <li><p>Animations and Transitions</p> <i class="fas fa-check"></i></li>
+                        </ul>
+                    </template>
+                </skill-description>
+            </div>
+        </transition>
+
+        <transition name="skill-show">
+            <div v-if="active === 'react'">
+                <skill-description>
+                    <template v-slot:heading>
+                        React.js
+                    </template>
+                    <template v-slot:rating>
+                        <div class="rating">
+                            <i class="fas fa-star star1"></i>
+                            <i class="fas fa-star star2"></i>
+                            <i class="fas fa-star star3"></i>
+                            <i class="fas fa-star-half-alt star4"></i>
+                            <i class="far fa-star star5"></i>
+                        </div>
+                    </template>
+                    <template v-slot:paragraph>
+                        React is another JavaScript framework that I've learnt and used for my projects. The more I work with it, the more I believe it's a candidate for my favourite framework. 
+                    </template>
+                    <template v-slot:list>
+                        <ul>
+                            <li><p>Core Concepts in React</p> <i class="fas fa-check"></i></li>
+                            <li><p>Functional Hooks</p> <i class="fas fa-check"></i></li>
+                            <li><p>Forms and validation</p> <i class="fas fa-check"></i></li>
+                            <li><p>React Router</p> <i class="fas fa-check"></i></li>
+                            <li><p>Redux</p> <i class="fas fa-check"></i></li>
                         </ul>
                     </template>
                 </skill-description>
@@ -205,8 +236,8 @@
                             <i class="fas fa-star star1"></i>
                             <i class="fas fa-star star2"></i>
                             <i class="fas fa-star star3"></i>
-                            <i class="star4"></i>
-                            <i class="star5"></i>
+                            <i class="far fa-star star4"></i>
+                            <i class="far fa-star star5"></i>
                         </div>
                     </template>
                     <template v-slot:paragraph>
@@ -238,9 +269,9 @@
                         <div class="rating">
                             <i class="fas fa-star star1"></i>
                             <i class="fas fa-star star2"></i>
-                            <i class="star3"></i>
-                            <i class="star4"></i>
-                            <i class="star5"></i>
+                            <i class="far fa-star star3"></i>
+                            <i class="far fa-star star4"></i>
+                            <i class="far fa-star star5"></i>
                         </div>
                     </template>
                     <template v-slot:paragraph>
@@ -268,9 +299,9 @@
                         <div class="rating">
                             <i class="fas fa-star star1"></i>
                             <i class="fas fa-star star2"></i>
-                            <i class="star3"></i>
-                            <i class="star4"></i>
-                            <i class="star5"></i>
+                            <i class="far fa-star star3"></i>
+                            <i class="far fa-star star4"></i>
+                            <i class="far fa-star star5"></i>
                         </div>
                     </template>
                     <template v-slot:paragraph>
@@ -300,9 +331,9 @@
                         <div class="rating">
                             <i class="fas fa-star star1"></i>
                             <i class="fas fa-star star2"></i>
-                            <i class="star3"></i>
-                            <i class="star4"></i>
-                            <i class="star5"></i>
+                            <i class="far fa-star star3"></i>
+                            <i class="far fa-star star4"></i>
+                            <i class="far fa-star star5"></i>
                         </div>
                     </template>
                     <template v-slot:paragraph>
@@ -333,9 +364,8 @@
                             <i class="fas fa-star star1"></i>
                             <i class="fas fa-star star2"></i>
                             <i class="fas fa-star star3"></i>
-                            <i class="star4"></i>
-                            <i class="far fa-star"></i>
-                            <i class="star5"></i>
+                            <i class="far fa-star star4"></i>
+                            <i class="far fa-star star5"></i>
                         </div>
                     </template>
                     <template v-slot:paragraph>
@@ -365,9 +395,8 @@
                             <i class="fas fa-star star1"></i>
                             <i class="fas fa-star star2"></i>
                             <i class="fas fa-star-half-alt star3"></i>
-                            <i class="far fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <i class="star4 star5"></i>
+                            <i class="far fa-star star4"></i>
+                            <i class="far fa-star star5"></i>
                         </div>
                     </template>
                     <template v-slot:paragraph>
@@ -394,9 +423,8 @@
                             <i class="fas fa-star star1"></i>
                             <i class="fas fa-star star2"></i>
                             <i class="fas fa-star-half-alt star3"></i>
-                            <i class="far fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <i class="star4 star5"></i>
+                            <i class="far fa-star star4"></i>
+                            <i class="far fa-star star5"></i>
                         </div>
                     </template>
                     <template v-slot:paragraph>
@@ -425,8 +453,7 @@
                             <i class="fas fa-star star2"></i>
                             <i class="fas fa-star star3"></i>
                             <i class="fas fa-star star4"></i>
-                            <i class="far fa-star"></i>
-                            <i class="star4 star5"></i>
+                            <i class="far fa-star star5"></i>
                         </div>
                     </template>
                     <template v-slot:paragraph>
@@ -454,8 +481,7 @@
                             <i class="fas fa-star star2"></i>
                             <i class="fas fa-star star3"></i>
                             <i class="fas fa-star star4"></i>
-                            <i class="far fa-star"></i>
-                            <i class="star5"></i>
+                            <i class="far fa-star star5"></i>
                         </div>
                     </template>
                     <template v-slot:paragraph>

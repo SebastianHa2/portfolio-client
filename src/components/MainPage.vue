@@ -21,8 +21,18 @@
                 </nav>
             </div>
             <div class="about-me">
+                <div class="location">
+                    <i class="fas fa-location-arrow"></i>
+                    <p>Dundalk, Ireland</p>
+                </div>
                 <h2 class="about-me-heading">A <span>little</span> bit about coding and I</h2>
-                <p class="about-me-paragraph">I am a young aspiring developer. I was always a more "programmatically" thinking person, who often heard "it's because you spend so much time in front of that computer". So when I first set off on my coding journey, even though first days, weeks and months were strenous, to put it mildly, I knew I was never going to look back. This was expected, because, how do you talk to someone if you don't speak their language? HTML and CSS were my first friends. They're easier to get along with, I would say, because they show much more than they speak. With them I learned how to structure and style pages in any way I like, without the help of any external libraries or boilerplates, now this is freedom. There came a limit however, when I wanted slides to move, display something dynamically or else, they just kind of looked at me. I knew it was time to meet Vanilla JavaScript. JS is much more sophisticated and logical, but this is why I fell in love with it, if you'll command it right, there is nothing in web development it won't do for you, I learned that very quickly when I saw my websites coming to life with interactiveness. This is when projects presented in this portfolio also started coming into existance. After months of failures and successes, googling, asking and researching, JavaScript and I came to a very good understanding and he decided to introduce me to family, Vue.js, who has helped me build my first demo single-page websites and is helping me build this portfolio. From then on, came a landslide, with Node.js, Express.js, MySQL, MongoDB...  At the end, I cannot fail to mention, VS Code who helps me communicate, Webpack who always keeps everyone together, GIT who always kept us safe and commited.
+                <p class="about-me-paragraph">I am an aspiring full-stack web developer currently based in Dundalk, Ireland. I have many dreams, but becoming a successful web developer is definitely up there. I was always a more "programmatically" thinking person, who often heard "it's because you spend so much time in front of that computer". My first connection with programming was when I learned Python in college, but my true love was and is JavaScript. 
+                <br />
+                <br />
+                I am dedicated to writing simple code, but code that is clean and does its job. Learning new technologies and new skills, to me, is like making new cool friends. I always push myself to do the best I can and take pride in my work. I enjoy transforming designs into code, creating animation effects and writing JavaScript logic. I have profound interest in both the frontend and the backend technologies and strive to perfectly understand the flow between them.
+                <br />
+                <br />
+                I am looking for a job position where I can give my all and where both sides will push each other forward, working on interesting projects/ideas around experienced people.
                 </p>
             </div>
         </div>
@@ -64,6 +74,7 @@ export default {
         gsap.from('.btn-flip', {duration: 0.5, opacity: '0', stagger: 0.3})
         gsap.from('.about-me-heading', {duration: 1, x: '-100%'})
         gsap.from('.about-me-paragraph', {duration: 1, x: '+100%'})
+        gsap.from('.location', {duration: 1, x: '+100%' })
     }
 }
 </script>
@@ -124,10 +135,27 @@ export default {
                 text-align: left;
                 position: relative;
 
+                .location{
+                    padding-left: 5rem;
+                    margin-bottom: 3rem;
+                    
+                    display: flex;
+
+                    i{
+                        font-size: 2rem;
+                        margin-right: 1rem;
+                    }
+
+                    p{
+                        font-size: 2rem;
+                        padding: 0;
+                    }
+                }
+
                 
                 h2{
                     padding-left: 5rem;
-                    margin-bottom: 1rem;
+                    margin-bottom: 2rem;
 
                     span{
                         text-decoration: line-through;
